@@ -1,0 +1,44 @@
+<%-include('./partials/header.ejs') %>
+
+<!-- <h1>Jai Bansal </h1> -->
+<style>
+    body {
+        background-color: #222; /* Dark background color */
+    }
+
+    .container {
+        background-color: #333; /* Darker container background color */
+        color: white; /* Text color */
+        border-radius: 10px; /* Rounded corners for the container */
+        padding: 20px; /* Add some padding for content inside the container */
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mt-5">
+            <h2 class="alert alert-success text-center">
+                Update Student
+            </h2>
+            <form method="post" action="/student/update/<%= data._id %>">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<%= data.name%>"/>
+                </div>
+                <div class="mb-3">
+                    <label for="roll_no" class="form-label">Roll-no</label>
+                    <input type="text" class="form-control" id="roll_no" name="roll_no" value="<%= data.roll_no %>"/>
+                </div>
+                <div class="mb-3">
+                    <label for="marks" class="form-label">Marks</label>
+                    <input type="text" class="form-control" id="marks" name="marks" value="<%= data.marks %>"/>
+                </div>
+                <button class="btn btn-warning" type="submit">Update</button>
+                <button class="btn btn-secondary" type="submit">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
+    
